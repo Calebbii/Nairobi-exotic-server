@@ -68,7 +68,6 @@ greenlet==3.0.3
 gunicorn==20.1.0
 honcho==1.1.0
 httplib2==0.14.0
--e git+git@github.com:Calebbii/ICD-Code-Generator.git@96066fd97796e6571a824db18d0d120e35c74912#egg=icdgenerator
 idna==3.3
 importlib-metadata==3.10.1
 importlib-resources==5.12.0
