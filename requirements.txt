@@ -25,7 +25,6 @@ colorama==0.4.3
 confusable-homoglyphs==3.2.0
 contourpy==1.1.0
 cryptography==2.8
-cupshelpers==1.0
 cycler==0.11.0
 dbus-python==1.2.16
 debugpy==1.6.0
