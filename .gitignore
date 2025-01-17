@@ -1,0 +1,7 @@
+.env
+
+virtual/
+*.sh
+*.pyc
+
+wanguana.db
