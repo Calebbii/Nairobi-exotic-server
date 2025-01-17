@@ -1,6 +1,5 @@
 aiohttp==3.6.2
 anyio==3.5.0
-apturl==0.5.2
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 asgiref==3.4.1
@@ -57,7 +56,8 @@ executing==1.2.0
 fasteners==0.14.1
 fastjsonschema==2.15.3
 filelock==3.6.0
-flask==3.0.0
+flask==3.0.3
+Flask-Cors==5.0.0
 flask-sqlalchemy==3.1.1
 fonttools==4.40.0
 frappe-bench==5.8.1
@@ -125,6 +125,7 @@ pandas==2.0.3
 pandocfilters==1.5.0
 paramiko==2.6.0
 parso==0.8.3
+passlib==1.7.4
 pbr==5.4.5
 pexpect==4.8.0
 pickleshare==0.7.5
