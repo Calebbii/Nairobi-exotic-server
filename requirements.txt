@@ -22,7 +22,6 @@ charset-normalizer==2.0.9
 click==8.1.7
 cloudinary==1.28.0
 colorama==0.4.3
-command-not-found==0.3
 confusable-homoglyphs==3.2.0
 contourpy==1.1.0
 cryptography==2.8
