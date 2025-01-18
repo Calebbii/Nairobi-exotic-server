@@ -159,7 +159,9 @@ def check_auth():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Ensure that the database is initialized before running the app
+    initialize()
+
     # Get the port from the environment variable or use 5000 as a default
     port = int(os.environ.get("PORT", 5000))
 
