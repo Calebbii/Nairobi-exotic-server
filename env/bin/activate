@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/caleb/Documents/Nairobi-Exotic/NairobiExotic/nairobiexotic_backend/env"
+VIRTUAL_ENV="/home/caleb/Documents/Nairobi-Exotic/NairobiExotic/nairobiexotic_backend/server/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

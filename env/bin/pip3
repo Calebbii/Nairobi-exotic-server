@@ -1,4 +1,4 @@
-#!/home/caleb/Documents/Nairobi-Exotic/NairobiExotic/nairobiexotic_backend/env/bin/python3.9
+#!/home/caleb/Documents/Nairobi-Exotic/NairobiExotic/nairobiexotic_backend/server/env/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys
