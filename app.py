@@ -22,13 +22,22 @@ def get_db():
 def init_db():
     with app.app_context():
         db = get_db()
-        with app.open_resource('schema.sql', mode='r') as f:
-            db.cursor().executescript(f.read())
-        db.commit()
+        try:
+            # Ensure schema.sql is in the correct location and readable
+            with app.open_resource('schema.sql', mode='r') as f:
+                print(f"Reading schema from: {f.name}")  # Debug line to check if schema.sql is found
+                db.cursor().executescript(f.read())
+            db.commit()
+        except Exception as e:
+            print(f"Error initializing database: {e}")
 
 # Initialize database before the first request
 def initialize():
-    init_db()
+    if not os.path.exists(DATABASE):
+        print(f"Database '{DATABASE}' not found. Initializing...")
+        init_db()
+    else:
+        print(f"Database '{DATABASE}' already exists. Skipping initialization.")
 
 # Enable CORS for all routes
 CORS(app)
