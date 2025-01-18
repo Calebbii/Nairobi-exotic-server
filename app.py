@@ -34,9 +34,7 @@ def initialize():
 CORS(app)
 
 # Routes
-@app.route('/')
-def index():
-    return render_template('index.html')  # Serve the React app's entry point (index.html)
+ # Serve the React app's entry point (index.html)
 
 # Register API (User Registration)
 @app.route('/api/register', methods=['POST'])

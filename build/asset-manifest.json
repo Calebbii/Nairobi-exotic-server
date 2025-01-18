@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a93a66af.css",
+    "main.js": "/static/js/main.3a4f1522.js",
+    "static/media/homepage.jpg": "/static/media/homepage.7df7d58925647d897fec.jpg",
+    "static/media/gatewayP_Image.jpg": "/static/media/gatewayP_Image.4055126fa63876ca0ba9.jpg",
+    "static/media/caleb.jpg": "/static/media/caleb.ff97bf3bda82be414350.jpg",
+    "static/media/ronnie.jpg": "/static/media/ronnie.c0dcba4547205bb805c2.jpg",
+    "static/media/beforePool.jpg": "/static/media/beforePool.d309fb408bf92e4be1ff.jpg",
+    "static/media/home-intro-image.jpg": "/static/media/home-intro-image.050be4c1f3604349e978.jpg",
+    "static/media/gravel-grandeur-landscape-progress.webp": "/static/media/gravel-grandeur-landscape-progress.e0fd1b27d9894b659729.webp",
+    "static/media/plantingLawns.jpg": "/static/media/plantingLawns.1bc1be92cef748c2036d.jpg",
+    "static/media/completePool.jpg": "/static/media/completePool.1a0785d227b503f99da2.jpg",
+    "static/media/afterPlanting.jpg": "/static/media/afterPlanting.5c0b36df5aa9986ed180.jpg",
+    "static/media/outdoorLighting.jpg": "/static/media/outdoorLighting.f7326d88b07306fc1868.jpg",
+    "static/media/backyardWaterFont.jpg": "/static/media/backyardWaterFont.8d0bd3edbf3c3373b1e6.jpg",
+    "static/media/garden_irrigation.avif": "/static/media/garden_irrigation.cf57de952512fdd7af96.avif",
+    "static/media/swimming_pool_project.jpg": "/static/media/swimming_pool_project.e7cc39e8fafcf9c1acdf.jpg",
+    "static/media/poolConstructionImage.webp": "/static/media/poolConstructionImage.566dcd55a81875104b6c.webp",
+    "static/media/flowerShop.jpg": "/static/media/flowerShop.cce7e25313e104e8fe19.jpg",
+    "static/media/commercialLandscape.jpg": "/static/media/commercialLandscape.d1c2ded92627c4662081.jpg",
+    "static/media/plantingGrassImage.webp": "/static/media/plantingGrassImage.2945ac0ab636a4bdabe7.webp",
+    "static/media/poolImage.jpg": "/static/media/poolImage.c2196dc77e98eff72a4c.jpg",
+    "static/media/estherImage.jpeg": "/static/media/estherImage.9ca0181d2207fac2c835.jpeg",
+    "index.html": "/index.html",
+    "main.a93a66af.css.map": "/static/css/main.a93a66af.css.map",
+    "main.3a4f1522.js.map": "/static/js/main.3a4f1522.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a93a66af.css",
+    "static/js/main.3a4f1522.js"
+  ]
+}
