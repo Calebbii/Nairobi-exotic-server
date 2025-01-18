@@ -160,3 +160,8 @@ def check_auth():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    # Get the port from the environment variable or use 5000 as a default
+    port = int(os.environ.get("PORT", 5000))
+
+    # Run the app with host '0.0.0.0' so it is accessible externally
+    app.run(debug=True, host="0.0.0.0", port=port)
