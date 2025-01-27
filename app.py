@@ -41,7 +41,7 @@ def initialize():
 
 # Enable CORS for all routes
 # Allow CORS for the frontend origin
-CORS(app, supports_credentials=True, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+CORS(app, supports_credentials=True, resources={r"/api/*": {"origins": "https://www.nairobi-exotic.com"}})
 
 # Routes
 @app.route('/')
