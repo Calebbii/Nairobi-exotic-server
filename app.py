@@ -40,7 +40,8 @@ def initialize():
         print(f"Database '{DATABASE}' already exists. Skipping initialization.")
 
 # Enable CORS for all routes
-CORS(app)
+# Allow CORS for the frontend origin
+CORS(app, supports_credentials=True, resources={r"/api/*": {"origins": "http://localhost:3000"}})
 
 # Routes
 @app.route('/')
@@ -166,6 +167,87 @@ def check_auth():
         return jsonify({"username": session.get('username')}), 200
     return jsonify({"message": "Not authenticated"}), 401
 
+
+# Fetch all users'
+
+@app.route('/api/admin/users', methods=['GET'])
+def admin_get_users():
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+        cur.execute("SELECT id, name, email, username FROM users")
+        users = [dict(row) for row in cur.fetchall()]
+        conn.close()
+        return jsonify(users), 200
+    except Exception as e:
+        print("Error fetching users:", e)
+        return jsonify({"message": "An error occurred"}), 500
+
+# Add a new user
+@app.route('/api/admin/users', methods=['POST'])
+def admin_add_user():
+    try:
+        data = request.get_json()
+        name = data.get('name', '').strip()
+        email = data.get('email', '').strip()
+        username = data.get('username', '').strip()
+        password = data.get('password', '').strip()
+
+        if not all([name, email, username, password]):
+            return jsonify({"message": "All fields are required"}), 400
+
+        conn = get_db()
+        cur = conn.cursor()
+        hashed_password = sha256_crypt.encrypt(password)
+        cur.execute(
+            "INSERT INTO users (name, email, username, password) VALUES (?, ?, ?, ?)",
+            (name, email, username, hashed_password),
+        )
+        conn.commit()
+        conn.close()
+        return jsonify({"message": "User added successfully"}), 201
+    except Exception as e:
+        print("Error adding user:", e)
+        return jsonify({"message": "An error occurred"}), 500
+
+# Update a user
+@app.route('/api/admin/users/<int:user_id>', methods=['PUT'])
+def admin_update_user(user_id):
+    try:
+        data = request.get_json()
+        name = data.get('name', '').strip()
+        email = data.get('email', '').strip()
+        username = data.get('username', '').strip()
+
+        if not all([name, email, username]):
+            return jsonify({"message": "All fields are required"}), 400
+
+        conn = get_db()
+        cur = conn.cursor()
+        cur.execute(
+            "UPDATE users SET name = ?, email = ?, username = ? WHERE id = ?",
+            (name, email, username, user_id),
+        )
+        conn.commit()
+        conn.close()
+        return jsonify({"message": "User updated successfully"}), 200
+    except Exception as e:
+        print("Error updating user:", e)
+        return jsonify({"message": "An error occurred"}), 500
+
+# Delete a user
+@app.route('/api/admin/users/<int:user_id>', methods=['DELETE'])
+def admin_delete_user(user_id):
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+        cur.execute("DELETE FROM users WHERE id = ?", (user_id,))
+        conn.commit()
+        conn.close()
+        return jsonify({"message": "User deleted successfully"}), 200
+    except Exception as e:
+        print("Error deleting user:", e)
+        return jsonify({"message": "An error occurred"}), 500
 
 if __name__ == '__main__':
     # Ensure that the database is initialized before running the app
